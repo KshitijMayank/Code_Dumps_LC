@@ -5,10 +5,11 @@ class Solution:
         
         minPrice = float('inf')
         maxProfit = float('-inf')
+        
         if len(prices) == 1 | len(prices) == 0:
             return 0
+        
         for i in prices:
-            
             if i < minPrice:
                 minPrice = i
             if i - minPrice > maxProfit:
