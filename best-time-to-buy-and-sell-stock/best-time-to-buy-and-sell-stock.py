@@ -3,17 +3,17 @@ class Solution:
         
         # Get the min price and then sell it at max profit
         
-        minPrice = float('inf')
-        maxProfit = float('-inf')
+        min_price = float('inf')
+        max_profit = float('-inf')
         
-        if len(prices) == 1 | len(prices) == 0:
-            return 0
-        
-        for i in prices:
-            if i < minPrice:
-                minPrice = i
-            if i - minPrice > maxProfit:
-                maxProfit = i - minPrice
-        return maxProfit
-        
+        for p in prices:
+            if p < min_price:
+                min_price = p
+            
+            cur_profit = p - min_price
+            
+            if cur_profit > max_profit:
+                max_profit = cur_profit
+            
+        return max_profit
         
